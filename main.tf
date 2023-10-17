@@ -46,7 +46,7 @@ variable "gcp_compute_instance_image" {
 }
 
 provider "google" {
-  credentials = var.gcp_service_account_json
+  credentials = jsondecode(var.gcp_service_account_json)
 
   project = var.gcp_project
   region  = var.gcp_region
