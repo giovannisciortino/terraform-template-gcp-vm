@@ -7,7 +7,7 @@ terraform {
   }
 }
 
-variable "gcp_service_account_json" {
+variable "gcp_service_account_json_file" {
   type = string
 }
 
@@ -46,7 +46,7 @@ variable "gcp_compute_instance_image" {
 }
 
 provider "google" {
-  credentials = jsondecode(var.gcp_service_account_json)
+  credentials = file(var.gcp_service_account_json_file)
 
   project = var.gcp_project
   region  = var.gcp_region
