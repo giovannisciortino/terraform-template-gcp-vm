@@ -6,7 +6,7 @@ terraform {
     }
   }
 
-  backend "gcp" {}
+  backend "gcs" {}
 
 }
 
