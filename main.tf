@@ -5,9 +5,6 @@ terraform {
       version = "4.51.0"
     }
   }
-
-  backend "gcs" {}
-
 }
 
 variable "gcp_service_account_json_file" {
