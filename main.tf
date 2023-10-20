@@ -95,12 +95,15 @@ output "ssh_username" {
   sensitive=false
 }
 
-output "ip_address" {
+output "vm_instance_ip_address" {
   value = google_compute_instance.vm_instance[*].network_interface[0].access_config[0].nat_ip
-
   sensitive=false
 }
 
+output "vm_instance_name" {
+  value = google_compute_instance.vm_instance[*].name
+  sensitive=false
+}
 
 resource "google_compute_instance" "vm_instance" {
   name         = "${format("%s-%03d", var.gcp_compute_instance_name, count.index + 1)}"
