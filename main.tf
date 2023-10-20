@@ -36,7 +36,7 @@ variable "gcp_vpc_network" {
 
 variable "gcp_compute_instance_machine_type" {
   type = string
-  default = "f1-micro"
+  default = "g1-small"
 }
 
 variable "gcp_compute_instance_name" {
